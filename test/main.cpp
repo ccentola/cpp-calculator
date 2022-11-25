@@ -3,6 +3,6 @@
 using namespace std;
 
 int main(){
-    cout << "hello world!" << endl;
+    cout << "test binary is working!" << endl;
     return 0;
 }
