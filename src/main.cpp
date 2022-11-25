@@ -1,44 +1,25 @@
 #include <iostream>
+#include "Calculator.h"
 
 using namespace std;
 
-int calculate(int firstNum, char op, int secondNum){
-
-    int result;
-
-    if(op == '+'){
-        result = firstNum + secondNum;
-    } else if (op == '-'){
-        result = firstNum - secondNum;
-    } else if (op == '*'){
-        result = firstNum * secondNum;
-    } else if (op == '/'){
-        result = firstNum / secondNum;
-    } else {
-        cout << "Invalid operator" << endl;
-    }
-
-    return result;
-    
-}
-
 int main(){
 
-    int firstNum;
-    int secondNum;
-    char op;
+    double x = 0.0;
+    double y = 0.0;
+    double result = 0.0;
+    char oper = '+';
 
+    cout << "Calculator App" << endl;
+    cout << "Please enter the operation to perform. Format: a+b | a-b | a*b | a/b" << endl;
 
-    cout << "Enter a number: ";
-    cin >> firstNum;
-    
-    cout << "Enter an operator: ";
-    cin >> op;
+    Calculator c;
+    bool active = true; // create a bool to enable quitting to console
+    while(active){
+        cin >> x >> oper >> y;
+        result = c.Calculate(x, oper, y);
+        cout << "Result is: " << result << endl;
+    }
 
-    cout << "Enter a number: ";
-    cin >> secondNum;
-
-    int result = calculate(firstNum, op, secondNum);
-    cout << result << endl;
     return 0;
 }
